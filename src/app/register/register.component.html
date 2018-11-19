@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <form action="" method="" class="register-form">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-lg-4">
+        <label for="username">USERNAME</label>
+        <input name="username" class="form-control" type="text" [(ngModel)]="username" [ngClass]="{'is-invalid':Username.errors && Username.touched}" required minlength="3" #Username="ngModel" > 
+        
+        <div [hidden]="!Username.errors?.required" class="invalid-feedback">Username required</div>
+        <div [hidden]="!Username.errors?.minlength" class="invalid-feedback">Username must be at least 3 chars long</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-lg-4">
+        <label for="email">EMAIL</label>
+        <input name="email" class="form-control" type="email" [(ngModel)]="email" #Email="ngModel" [ngClass]="{'is-invalid':Email.errors && Email.touched}"  required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+        <div [hidden]="!Email.errors?.required" class="invalid-feedback">Email required</div>
+        <div [hidden]="!Email.errors?.pattern" class="invalid-feedback">Email not valid</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-lg-4">
+        <label for="password">PASSWORD</label>
+        <input name="password" class="form-control" type="password" [(ngModel)]="password" [ngClass]="{'is-invalid':Password.errors && Password.touched}" #Password="ngModel" required minlength="6">
+        <div [hidden]="!Password.errors?.required" class="invalid-feedback">Password required</div>
+        <div [hidden]="!Password.errors?.minlength" class="invalid-feedback">Password must be at least 6 chars long</div>
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-lg-4">
+        <label for="password">RE-ENTER PASSWORD</label>
+        <input name="password" class="form-control" type="password" [(ngModel)]="confirmedPassword" #ConfirmedPassword="ngModel" [ngClass]="{'is-invalid':ConfirmedPassword.errors && ConfirmedPassword.touched}" required minlength="6">
+        <!-- <div  [hidden]="ConfirmedPassword.errors?required" class="invalid-feedback">asd</div>
+        <div  [hidden]="ConfirmedPassword.errors?minlength" class="invalid-feedback">asd</div>
+         -->
+      
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3"></div>
+      <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+        <button class="btn btn-default logbutton" (click)="registerUser()" [routerLink]="['/']" routerLinkActive="router-link-active" >Sign up</button>
+      </div>
+    </div>
+  </form>
+</div>

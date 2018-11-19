@@ -1,0 +1,28 @@
+<div class="student-list">
+  <div class="actual-list">
+    <div class="row" style="color:white;background-color: black;">
+      <div class="col-sm-6" style="font-weight: bolder;font-size:150%;">
+        Name
+      </div>
+      <div class="col-sm-6" style="font-weight: bolder;font-size:150%;">
+        Average
+      </div>
+    </div>
+    <div class="card " *ngFor="let student of students;let i = index">
+     
+      <div class="row">
+      <div class="col-sm-6">
+        <span style="cursor:pointer;" class="student-name" routerLink="/student-details/{{student.email}}">
+          <div style="font-size:125%;"  step=".01">{{i+1}}.{{student.username}}</div>
+        </span>
+      </div>
+      <div class="col-sm-6">
+        <span style="cursor:pointer;" class="student-name">
+          <div style="font-size:125%;">{{student.average.toFixed(2)}}</div>
+        </span>
+      </div>
+    </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,40 @@
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 3%;
+    padding-bottom: 10%;
+    opacity: .6
+}
+
+.student-details {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.row-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(69, 69, 156);
+    height: 5%;
+    padding: 0;
+    margin:0;
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.row-subject {
+    background-color:white;
+    color:black;
+}
+
+.col-sm-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

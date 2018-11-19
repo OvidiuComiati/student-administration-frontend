@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.navbar-nav {
+   position: absolute;
+    right: 0;
+}
+.container-fluid {
+   width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/app-images/login-background.jpg');
+}
+.nav-link{
+    font-family: Amaranth;
+    font-size: 20px;
+    
+}
+h1{
+    color: azure;
+    font-size: 10vw;
+    margin-top: 30vh;
+    padding-left: 17vw;
+    font-family: Berkshire Swash;
+}
+
+p{
+    padding-left: 21vw;
+    position: absolute;
+    top: 0;right: 0;bottom: 0;left: 0;
+    padding-top: 52vh;
+    font-family: Berkshire Swash;
+    font-size: 1.5vw;
+}
+
+.btn {
+   color: white !important;
+    background-color: #f8112c;
+    margin-left: 21vw;
+}
+
+@media only screen and(max-width:400px){
+   .row p{
+        padding-top: 30vh;
+        }
+}

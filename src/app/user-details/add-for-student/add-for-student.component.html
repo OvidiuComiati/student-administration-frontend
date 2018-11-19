@@ -1,0 +1,31 @@
+<ng-template #content let-modal>
+  <div class="modal-header bg-success">
+    <h4 class="modal-title" id="modal-basic-title">Add Materie</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>Subject</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="CS" [(ngModel)]="subject" name="cCode">
+        </div>
+        <label>Lab Grade</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="10.00" [(ngModel)]="labGrade" name="cName">
+        </div>
+        <label>Exam Grade</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="10.00" [(ngModel)]="examGrade" name="cCode">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addCourse()">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-dark" style="height: 100%; padding:0;" (click)="open(content)">Add Course</button>

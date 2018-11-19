@@ -1,0 +1,48 @@
+
+
+<div class="container-fluid">
+    <div class="student-details" *ngIf="student">
+        <div class="row row-name" style="display: flex;justify-content: space-around;">
+            {{student.email}}
+            <add-for-student style="height: 100%;" [email]="student.email" (sendToParent)="getSubject($event)"></add-for-student>
+            <button class="btn btn-lg btn-dark" style="padding:0;height: 100%;" (click)="computeAverage()">
+                Compute average
+            </button>
+        </div> 
+        <table style="width:100%">
+                <tr>
+                  <th>Subject</th>
+                  <th>Laboratory grade</th> 
+                  <th>Exam grade</th> 
+                </tr>
+                <tr *ngFor="let subject of student.subjects">
+                    <th>{{subject.subject}}</th>
+                    <th>{{subject.labGrade}}</th> 
+                    <th>{{subject.examGrade}}</th> 
+                </tr>
+                
+        </table>
+         <!-- <div class="row row-name row-subject">
+            <div class="col-sm-3">
+                Subject
+            </div>
+            <div class="col-sm-3">
+                Laboratory grade
+            </div>
+            <div class="col-sm-3">
+                Exam grade
+            </div>
+        </div>
+        <div class="row row-name row-subject" *ngFor="let subject of student.subjects">
+            <div class="col-sm-3">
+                {{subject.subject}}
+            </div>
+            <div class="col-sm-3">
+                {{subject.labGrade}}
+            </div>
+            <div class="col-sm-3">
+                {{subject.examGrade}}
+            </div>
+        </div> -->
+    </div>
+</div>

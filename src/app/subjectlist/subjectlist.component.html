@@ -1,0 +1,22 @@
+<add-materie-component></add-materie-component>
+
+<div class="student-list">
+  <div class="actual-list">
+    <div class="row" style="color:white;background-color: black;">
+      <div class="col-sm-6" style="font-weight: bolder;font-size:150%;" >
+        Courses list :
+      </div>
+      
+    </div>
+    <li class="card card-body mb-2" *ngFor="let subject of subjects;let i = index">
+   
+      
+      <h3>{{ i+1 }} {{ subject.name }} <small ><button   (click)="!!subject.code = !!!subject.code" class="btn btn-dark btn-sm"><i [ngClass]="!!subject.code ? 'fa fa-plus' : 'fa fa-minus'"></i></button></small></h3>
+      <ul class="list-group" *ngIf="!!!subject.code">
+        <li class="list-group-item">Teacher: {{ subject.teacher }}</li>
+        <li class="list-group-item">NR of credits: {{ subject.credits}}</li>
+        <li class="list-group-item">Description: {{ subject.description }}</li>
+      </ul>
+    </li>
+  </div>
+</div>

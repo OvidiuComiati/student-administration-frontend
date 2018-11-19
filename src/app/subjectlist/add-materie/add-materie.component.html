@@ -1,0 +1,43 @@
+<ng-template #content let-modal>
+  <div class="modal-header bg-success">
+    <h4 class="modal-title" id="modal-basic-title">Add Course</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>Course name</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="Computer Security" [(ngModel)]="courseName" name="cName">
+        </div>
+
+        <label>Code</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="CS" [(ngModel)]="courseCode" name="cCode">
+        </div>
+
+        <label>Credit number</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="5" type="number" [(ngModel)]="courseCredits" name="cCredits">
+        </div>
+
+        <label>Primary teacher</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="John Doe" [(ngModel)]="courseTeacher" name="'cTeacher'">
+        </div>
+        
+        <label>Course description</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="It is about truth..." [(ngModel)]="courseDescription" name="cDescription">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addCourse()">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-dark" (click)="open(content)">Add Course</button>
